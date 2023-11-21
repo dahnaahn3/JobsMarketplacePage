@@ -8,12 +8,12 @@ import { UilUsersAlt } from '@iconscout/react-unicons'
 
 function DesktopNav(){
 return(
-<nav className="bg-white border-gray-200 dark:bg-gray-900">
+<nav className="bg-white border-gray-200">
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 {/* EPOSTING HEADER */}
-<a className="flex items-center space-x-3 rtl:space-x-reverse">
+<a className="flex items-center space-x-3 ">
 <UilBoltAlt />
-<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ePosting</span>
+<span className="self-center text-2xl font-semibold whitespace-nowrap ">ePosting</span>
 </a>
 {/* END OF EPOSTING HEADER */}
 
@@ -24,7 +24,7 @@ return(
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <UilSearch />
     </div>
-    <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="Search" required/>
+    <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full ps-10 p-2.5" placeholder="Search" required/>
     </div>
 
 {/* DROP DOWN MENU */}
@@ -57,7 +57,7 @@ return(
     data-te-dropdown-menu-ref>
     <li>
       <a
-        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400"
         href="#"
         data-te-dropdown-item-ref
         >Action</a
@@ -65,7 +65,7 @@ return(
     </li>
     <li>
       <a
-        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400"
         href="#"
         data-te-dropdown-item-ref
         >Another action</a
@@ -73,7 +73,7 @@ return(
     </li>
     <li>
       <a
-        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400"
         href="#"
         data-te-dropdown-item-ref
         >Something else here</a
@@ -83,7 +83,7 @@ return(
 </div>
 
 {/* END OF DROPDOWN MENU */}
-    <button type="submit" className="p-2.5 ms-2 text-sm font-medium text-white bg-purple-700 rounded-lg border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+    <button type="submit" className="p-2.5 ms-2 text-sm font-medium text-white bg-purple-700 rounded-lg border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">
         POST
     </button>
 </form>
@@ -92,7 +92,7 @@ return(
 
 <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
 
-<ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+<ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
 <div className='flex space-x-4 flex-row pr-7'>
     <li className="flex flex-col items-center">
         <UilHome />

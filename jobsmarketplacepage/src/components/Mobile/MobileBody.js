@@ -15,7 +15,7 @@ const MobileBody = () => {
     return (
 <div key={m.id}>
     <div>
-        <ul className="p-3 flex flex-col space-y-4 w-full">
+        <ul className="p-2 flex flex-col space-y-4 w-full">
         <li className="p-3 bg-white box-border border-4">
                 <div className="flex flex-row justify-between">
                     <div className="text-purple-600 font-bold">{m.company}</div>

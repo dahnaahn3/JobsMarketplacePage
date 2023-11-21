@@ -14,7 +14,7 @@ function DesktopBodyHeader(){
     return(
         <>
       <div className="pl-3 pt-3">
-      <ul className="p-2 pl-6 bg-white border-solid flex flex-row space-x-5">
+      <ul className="p-2 bg-white border-solid flex flex-row justify-center space-x-10">
           <li className="hover:text-purple-300">Latest Posts</li>
           <li className="hover:text-purple-300">Recent Activities</li>
       </ul>

@@ -1,5 +1,5 @@
-import Desktop from './components/Desktop';
-import Mobile from './components/Mobile';
+import Desktop from './components/Desktop/Desktop';
+import Mobile from './components/Mobile/Mobile';
 import { useMediaQuery} from 'react-responsive';
 import MediaQuery from 'react-responsive';
 import './App.css';

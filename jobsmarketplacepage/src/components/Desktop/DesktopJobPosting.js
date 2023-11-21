@@ -1,13 +1,20 @@
-import { MockData } from "./MockData"
+import { MockData } from "../MockData"
 import { UilClock, UilCalender, UilUsdCircle, UilBookmark, UilCommentAlt, UilExpandAlt, UilEllipsisV} from '@iconscout/react-unicons'
-
 
 function DesktopJobPosting(){
     return(
     <>
     {MockData.map(m =>{
+        let bookmark;
+        if(m.bookmarked === false ){
+            bookmark = <p className="box-border border-2 text-purple-600 border-purple-600 p-2 rounded-full"><UilBookmark /></p>
+        }
+        else{
+            bookmark = <p className="box-border border-2 bg-green-200 text-green-600 border-green-600 p-2 rounded-full"><UilBookmark /></p>
+        }
+
         return(
-            <>
+            <div key={m.id}>
                 <ul className="p-5 flex flex-col space-y-4">
                     <li className="p-3 box-border border-4">
                         <div className="flex flex-row justify-between">
@@ -34,14 +41,14 @@ function DesktopJobPosting(){
                                 <p className="flex"><UilUsdCircle/>{m.employee_bonus}</p>
                             </div>
                             <div className="flex flex-row space-x-5">
-                                <p className="box-border border-2 text-purple-600 border-purple-600 p-2 rounded-full"><UilBookmark /></p>
+                                <span>{bookmark}</span>
                                 <p className="flex box-border border-2 text-purple-600 border-purple-600 p-2 rounded-full"><UilCommentAlt className="mr-2"/>{m.contact}</p>
                                 <button className="bg-purple-600 text-white rounded-full pl-3 pr-3">Apply</button>
                             </div>
                         </div>
                     </li>
                 </ul>
-            </>
+            </div>
         )
     })}
     </>

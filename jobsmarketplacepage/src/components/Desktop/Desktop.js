@@ -4,7 +4,7 @@ import DesktopBody from "./DesktopBody"
 function Desktop(){
     return(
         <>
-        
+
         <DesktopNav />
         <DesktopBody />
         </>

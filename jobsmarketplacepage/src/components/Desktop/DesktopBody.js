@@ -10,8 +10,10 @@ import DesktopBodyHeader from "./DesktopBodyHeader";
 import { MockData } from "../MockData";
 
 
+
 function DesktopBody(){
   const [experienceLevel, setExperienceLevel] = useState([])
+  const [date, setDate] = useState('')
 
     useEffect(( )=> {
         initTE({ Dropdown, Ripple });
@@ -20,14 +22,21 @@ function DesktopBody(){
   return(
 <div className="bg-slate-100 pt-5 pl-10 pr-10 flex justify-between">
     <div style={{width: "70%"}}>
+
     <DesktopBodyHeader
      experienceLevel={experienceLevel}
-     onExperienceLevel={setExperienceLevel}/>
+     onExperienceLevel={setExperienceLevel}
+     date={date}
+     onSetDate={setDate}
+     />
+
       <div>
-        <div >
-          <DesktopJobPosting MockData={MockData}
+        <div>
+          <DesktopJobPosting
+          MockData={MockData}
           experienceLevel={experienceLevel}
-          onExperienceLevel={setExperienceLevel} />
+          onExperienceLevel={setExperienceLevel}
+          date={date} />
         </div>
     </div>
     </div>

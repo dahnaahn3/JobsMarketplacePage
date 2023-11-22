@@ -1,19 +1,18 @@
 import React, { useState } from 'react'
-import Calendar from 'react-calendar'
+import ReactDatePicker from 'react-datepicker';
 
-const ClosingDate = () => {
+
+const ClosingDate = ({onSetDate, date}) => {
 
 const[isOpen, setIsOpen] = useState(false)
-const [value, setValue] = useState(new Date());
 
-const handleOpen = () =>{
+const handleOpen = () => {
     setIsOpen(!isOpen)
 }
 
-function onChange(nextValue){
-    setValue(nextValue)
-}
-
+const handleDate = (selectedDate) => {
+      onSetDate(selectedDate);
+  };
 
   return (
     <div>
@@ -30,18 +29,19 @@ function onChange(nextValue){
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
 
-      {isOpen &&
-              <div className="absolute z-50 w-56 p-1 pb-3 bg-white rounded-lg shadow" id="dropdown">
-              <Calendar
-                onChange={onChange}
-                value={value}
-              />
+      {isOpen && (
+              <div className="absolute z-50 w-56 center p-1 pb-3 bg-white rounded-lg shadow" id="dropdown">
+                <ReactDatePicker
+                onChange={handleDate}
+                inline
+                value={date}
+                />
             </div>
-      }
+      )}
 
     </div>
   )

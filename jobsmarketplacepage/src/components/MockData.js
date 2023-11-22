@@ -20,7 +20,9 @@ export const MockData = [
         benefits: {"Competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "Comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
-        level: "Director"
+        level: "Director",
+        onsite_or_remote: "onsite"
+
     },
 
     {
@@ -31,7 +33,7 @@ export const MockData = [
         work_type: 'Fulltime',
         salary_range: '$100-200k',
         description: 'this is where the description for the apple company goes',
-        available_until: 'Dec 8',
+        available_until: 'Dec 08',
         days_posted_ago: '5 days',
         employee_bonus: '$1000',
         contact:"Joe",
@@ -44,7 +46,8 @@ export const MockData = [
         benefits: {"competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
-        level: "Entry"
+        level: "Entry",
+        onsite_or_remote: "remote"
 
     },
     {
@@ -55,7 +58,7 @@ export const MockData = [
         work_type: 'Remote',
         salary_range: '$80-200k',
         description: 'this is where the description for the yahoo company goes',
-        available_until: 'Dec 9',
+        available_until: 'Dec 09',
         days_posted_ago: '7 days',
         employee_bonus: '$200',
         contact:"Mary",
@@ -68,7 +71,8 @@ export const MockData = [
         benefits: {"competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
-        level: "Internship"
+        level: "Internship",
+        onsite_or_remote: "remote"
 
     },
     {
@@ -79,7 +83,7 @@ export const MockData = [
         work_type: 'Remote',
         salary_range: '$80-200k',
         description: 'this is where the description for the amazon company goes',
-        available_until: 'Dec 9',
+        available_until: 'Dec 09',
         days_posted_ago: '7 days',
         employee_bonus: '$200',
         contact:"Mary",
@@ -92,7 +96,8 @@ export const MockData = [
         benefits: {"competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
-        level: "Mid-Senior"
+        level: "Mid-Senior",
+        onsite_or_remote: "onsite"
 
     },
     {
@@ -103,7 +108,7 @@ export const MockData = [
         work_type: 'Remote',
         salary_range: '$80-200k',
         description: 'this is where the description for the Meta company goes',
-        available_until: 'Dec 9',
+        available_until: 'Dec 09',
         days_posted_ago: '7 days',
         employee_bonus: '$200',
         contact:"Mary",
@@ -116,7 +121,8 @@ export const MockData = [
         benefits: {"competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
-        level: "Associate"
+        level: "Associate",
+        onsite_or_remote: "onsite"
 
     },
 ]

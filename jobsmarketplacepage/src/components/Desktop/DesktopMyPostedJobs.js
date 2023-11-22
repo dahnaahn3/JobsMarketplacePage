@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 export const DesktopMyPostedJobs = () => {
     const[isOpen, setisOpen] = useState(false);
+
     const[showButton, setShowButton] = useState(true)
 
     function handleOpen(){

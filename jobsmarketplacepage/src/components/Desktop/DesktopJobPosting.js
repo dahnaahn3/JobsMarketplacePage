@@ -4,18 +4,22 @@ import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import DesktopSearchBar from './DesktopSearchBar';
 
-function DesktopJobPosting({ MockData}) {
+
+function DesktopJobPosting({ MockData, experienceLevel }) {
+
 const [selectedId, setSelectedId] = useState(null);
-const [searchTerm, setSearchTerm] = useState('')
+const [searchTerm, setSearchTerm] = useState("")
 
-const filteredData = MockData.filter((m) =>
-(m.company.toLowerCase().includes(searchTerm.toLowerCase())) ||
-(m.position_title.toLowerCase().includes(searchTerm.toLowerCase())))
-
+const filteredData = MockData.filter(
+  (m) =>
+    (m.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    m.position_title.toLowerCase().includes(searchTerm.toLowerCase())) &&
+    (experienceLevel.length === 0 || experienceLevel.includes(m.level))
+);
 
   return (
     <>
-      <DesktopSearchBar onSearch={setSearchTerm} />
+    <DesktopSearchBar onSearch={setSearchTerm}/>
       {filteredData.map(m => {
         let bookmark;
         if (m.bookmarked === false) {

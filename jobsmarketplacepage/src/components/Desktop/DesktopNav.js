@@ -4,6 +4,7 @@ import { UilBriefcaseAlt, UilUsersAlt, UilHome, UilBoltAlt } from '@iconscout/re
 
 
 function DesktopNav(){
+
 return(
 <nav className="bg-white border-gray-200">
 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -13,9 +14,7 @@ return(
 <span className="self-center text-2xl font-semibold whitespace-nowrap ">ePosting</span>
 </a>
 
-
 <div className="flex items-center">
-
     <div className="relative" data-te-dropdown-ref>
       <button
         className="flex items-center whitespace-nowrap rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black hover:bg-primary-600 hover:shadow-purple-300 focus:bg-primary-600 "
@@ -28,7 +27,6 @@ return(
         Jobs
         <span className="ml-2 w-2">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
             className="h-5 w-5">

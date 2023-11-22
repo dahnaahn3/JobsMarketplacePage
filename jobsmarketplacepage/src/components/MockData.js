@@ -19,8 +19,8 @@ export const MockData = [
         "Excellent analysis, design, writing, and communication skills"],
         benefits: {"Competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "Comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
-
-                }
+                },
+        level: "Director"
     },
 
     {
@@ -43,7 +43,8 @@ export const MockData = [
         "Excellent analysis, design, writing, and communication skills"],
         benefits: {"competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
-                }
+                },
+        level: "Entry"
 
     },
     {
@@ -66,7 +67,8 @@ export const MockData = [
         "Excellent analysis, design, writing, and communication skills"],
         benefits: {"competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
-                }
+                },
+        level: "Internship"
 
     },
     {
@@ -89,7 +91,8 @@ export const MockData = [
         "Excellent analysis, design, writing, and communication skills"],
         benefits: {"competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
-                }
+                },
+        level: "Mid-Senior"
 
     },
     {
@@ -112,7 +115,8 @@ export const MockData = [
         "Excellent analysis, design, writing, and communication skills"],
         benefits: {"competitive salary":"A highly competitive salary that reflects your skills and contributions.",
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
-                }
+                },
+        level: "Associate"
 
     },
 ]

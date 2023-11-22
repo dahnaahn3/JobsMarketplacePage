@@ -5,12 +5,13 @@ import {
     Ripple,
     initTE,
   } from "tw-elements";
-import { useEffect} from "react";
+import { useEffect, useState } from "react";
 import DesktopBodyHeader from "./DesktopBodyHeader";
 import { MockData } from "../MockData";
 
 
-function DesktopBody({searchTerm}){
+function DesktopBody(){
+  const [experienceLevel, setExperienceLevel] = useState([])
 
     useEffect(( )=> {
         initTE({ Dropdown, Ripple });
@@ -19,10 +20,14 @@ function DesktopBody({searchTerm}){
   return(
 <div className="bg-slate-100 pt-5 pl-10 pr-10 flex justify-between">
     <div style={{width: "70%"}}>
-    <DesktopBodyHeader />
+    <DesktopBodyHeader
+     experienceLevel={experienceLevel}
+     onExperienceLevel={setExperienceLevel}/>
       <div>
         <div >
-          <DesktopJobPosting MockData={MockData} searchTerm={searchTerm} />
+          <DesktopJobPosting MockData={MockData}
+          experienceLevel={experienceLevel}
+          onExperienceLevel={setExperienceLevel} />
         </div>
     </div>
     </div>

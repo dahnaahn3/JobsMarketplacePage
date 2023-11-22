@@ -16,7 +16,6 @@ function App() {
 
   return (
   <div>
-
     <MediaQuery maxDeviceWidth={640}>
       {isMobileDevice && <Mobile />}
     </MediaQuery>

@@ -1,16 +1,12 @@
 import { UilSearch } from '@iconscout/react-unicons';
 import { useState } from 'react';
 
-const DesktopSearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const DesktopSearchBar = ({ onSearch , searchTerm }) => {
 
   const handleSearch = (e) => {
     const value = e.target.value;
-    setSearchTerm(value);
     onSearch(value);
   };
-
-
 
   return (
     <>
@@ -34,7 +30,7 @@ const DesktopSearchBar = ({ onSearch }) => {
             placeholder="Search"
             value={searchTerm}
             onChange={handleSearch}
-            required
+            
           />
         </div>
       </form>

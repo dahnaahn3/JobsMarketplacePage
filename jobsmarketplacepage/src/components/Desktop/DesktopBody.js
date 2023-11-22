@@ -5,11 +5,12 @@ import {
     Ripple,
     initTE,
   } from "tw-elements";
-import { useEffect } from "react";
+import { useEffect} from "react";
 import DesktopBodyHeader from "./DesktopBodyHeader";
+import { MockData } from "../MockData";
 
 
-function DesktopBody(){
+function DesktopBody({searchTerm}){
 
     useEffect(( )=> {
         initTE({ Dropdown, Ripple });
@@ -21,7 +22,7 @@ function DesktopBody(){
     <DesktopBodyHeader />
       <div>
         <div >
-          <DesktopJobPosting />
+          <DesktopJobPosting MockData={MockData} searchTerm={searchTerm} />
         </div>
     </div>
     </div>

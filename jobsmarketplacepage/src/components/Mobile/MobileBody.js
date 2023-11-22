@@ -1,5 +1,5 @@
 import { MockData } from "../MockData";
-import { UilClock, UilCalender, UilUsdCircle, UilBookmark, UilCommentAlt, UilExpandAlt, UilEllipsisV } from '@iconscout/react-unicons';
+import { UilClock, UilCalender, UilUsdCircle, UilBookmark, UilCommentAlt } from '@iconscout/react-unicons';
 
 const MobileBody = () => {
     return (

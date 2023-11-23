@@ -1,6 +1,7 @@
 import DesktopSearchBar from './DesktopSearchBar';
 import { UilBriefcaseAlt, UilUsersAlt, UilHome, UilBoltAlt } from '@iconscout/react-unicons'
 import { useState } from 'react';
+import logo from '../epostinglogo.png'
 
 
 function DesktopNav( { onSearch , searchTerm } ){
@@ -11,11 +12,13 @@ const handleOpen =() => {
 }
 
 return(
-<nav className="bg-white border-gray-200 pt-4 flex justify-between">
+<nav className="bg-white border-gray-200 pt-4 pb-4 flex justify-between">
 
 <div className="justify-start mt-4 pl-5">
   <div className='inline-flex'>
-    <UilBoltAlt />
+    <img
+    className='h-8'
+    src={logo} alt="logo" />
     <p className="text-2xl font-semibold ">ePosting</p>
 
   </div>
@@ -71,7 +74,7 @@ searchTerm={searchTerm}
             >Job 3</a>
         </li>
       </ul>
-    </div>
+</div>
 
 <button type="submit" className="p-2.5 ms-2 text-sm font-medium text-white bg-purple-700 rounded-lg border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">
     POST
@@ -80,49 +83,53 @@ searchTerm={searchTerm}
 
 <div className='flex justify-end pr-5'>
   <div className="flex space-x-3 pr-5">
-    <ul className="flex flex-col mt-4 font-medium rounded-lg">
-    <div className='flex space-x-4 flex-row'>
-        <li className="flex flex-col items-center">
-            <UilHome />
-            <p>Home</p>
-        </li>
-        <li className="flex flex-col items-center">
-            <UilBriefcaseAlt/>
-            <p>Jobs</p>
-        </li>
-        <li className="flex flex-col items-center">
-            <UilUsersAlt />
-            <p>Resources</p>
-        </li>
-        </div>
-      </ul>
-  </div>
+      <ul className="flex flex-col mt-4 font-medium rounded-lg">
+      <div className='flex space-x-4 flex-row'>
+          <li className="flex flex-col items-center">
+              <UilHome />
+              <p>Home</p>
+          </li>
+          <li className="flex flex-col items-center">
+              <UilBriefcaseAlt/>
+              <p>Jobs</p>
+          </li>
+          <li className="flex flex-col items-center">
+              <UilUsersAlt />
+              <p>Resources</p>
+          </li>
+          </div>
+        </ul>
+    </div>
 
   <div className='flex pt-3 mb-3 space-x-3'>
-        <p className="bg-slate-200 p-2 rounded-full">
-          <div className="relative">
-            <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/chat-message--v1.png" alt="chat-message--v1"/>
-            <div className="absolute bottom-5 left-6 h-4 w-4 bg-red-600 rounded-full"></div>
-          </div>
-        </p>
+          <p className="bg-slate-200 p-2 rounded-full">
+            <div className="relative">
+              <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/chat-message--v1.png" alt="chat-message--v1"/>
+              <div className="absolute bottom-5 left-6 h-4 w-4 bg-red-600 rounded-full"></div>
+            </div>
+          </p>
 
+    <div className='relative'>
         <p onClick={handleOpen} className="bg-slate-200 bg-cover p-2 rounded-full">
           <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/menu-2.png" alt="menu-2"/>
         </p>
-        {isOpen &&
-          <div className='absolute border border-slate-400 border-3'>
-            <ul>
-              <li>Settings</li>
-              <li>second option</li>
-              <li> third option</li>
-            </ul>
-          </div>
-          }
+
+        <div>
+              {isOpen &&
+                <div className='absolute top-full right-0 mt-2 p-2 rounded-lg bg-white'>
+                  <ul>
+                    <button>Settings</button>
+                    <button>Help</button>
+                  </ul>
+                </div>
+                }
+        </div>
+
+    </div>
+
   </div>
 
 </div>
-
-
 
 </nav>
     )

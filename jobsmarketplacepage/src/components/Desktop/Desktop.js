@@ -1,16 +1,17 @@
 import DesktopNav from "./DesktopNav"
 import DesktopBody from "./DesktopBody"
-import { MockData } from "../MockData"
+import { JobsData } from "../JobsData"
+import { useState } from "react"
 
 
 
 function Desktop(){
-
+    const [searchTerm, setSearchTerm] = useState("")
 
     return(
         <>
-        <DesktopNav />
-        <DesktopBody MockData={MockData} />
+        <DesktopNav searchTerm={searchTerm} onSearch={setSearchTerm}/>
+        <DesktopBody JobsData={JobsData} searchTerm={searchTerm} />
         </>
     )
 }

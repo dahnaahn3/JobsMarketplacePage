@@ -1,5 +1,5 @@
 import React from 'react'
-import { MockData } from '../../MockData'
+import { JobsData } from '../../JobsData'
 import { useState } from 'react'
 
 export const MyNetwork = () => {

@@ -1,10 +1,10 @@
-import { MockData } from "../MockData";
+import { JobsData } from "../JobsData";
 import { UilClock, UilCalender, UilUsdCircle, UilBookmark, UilCommentAlt } from '@iconscout/react-unicons';
 
 const MobileBody = () => {
     return (
 <div className="bg-slate-200">
-{MockData.map(m => {
+{JobsData.map(m => {
     let bookmark;
     if (m.bookmarked === false) {
         bookmark = <p className="box-border border-2 text-purple-600 border-purple-600 p-2 rounded-full"><UilBookmark /></p>

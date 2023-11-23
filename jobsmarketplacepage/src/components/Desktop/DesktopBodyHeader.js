@@ -19,6 +19,8 @@ function DesktopBodyHeader({experienceLevel, onExperienceLevel, onSetDate, date,
           <li className="hover:text-purple-300">Latest Posts</li>
           <li className="hover:text-purple-300">Recent Activities</li>
       </ul>
+
+      <div className=" flex justify-center ">
       <DesktopDropdownMenus
           experienceLevel={experienceLevel}
           onExperienceLevel={onExperienceLevel}
@@ -27,6 +29,7 @@ function DesktopBodyHeader({experienceLevel, onExperienceLevel, onSetDate, date,
           onOnsiteOrRemote={onOnsiteOrRemote}
           onsiteOrRemote={onsiteOrRemote}
           />
+    </div>
     </div>
 
       </>

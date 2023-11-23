@@ -2,14 +2,20 @@
 import { UilClock, UilTimesSquare, UilCalender, UilUsdCircle, UilBookmark, UilCommentAlt, UilExpandAlt, UilEllipsisV } from '@iconscout/react-unicons';
 import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import DesktopSearchBar from './DesktopSearchBar';
 
 
-function DesktopJobPosting({ MockData, experienceLevel, date, onsiteOrRemote }) {
+
+function DesktopJobPosting({ JobsData, experienceLevel, date, onsiteOrRemote, searchTerm }) {
 const [selectedId, setSelectedId] = useState(null);
-const [searchTerm, setSearchTerm] = useState("")
+const [isOpen, setIsOpen] = useState(false)
+const [optionsId, setOptionsId] = useState(null)
 
-const filteredData = MockData.filter(
+
+const handleOpen = () => {
+  setIsOpen(!isOpen)
+}
+
+const filteredData = JobsData.filter(
   (m) =>
     (m.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
     m.position_title.toLowerCase().includes(searchTerm.toLowerCase())) &&
@@ -19,10 +25,8 @@ const filteredData = MockData.filter(
 );
 
 
-
   return (
     <>
-    <DesktopSearchBar onSearch={setSearchTerm}/>
       {filteredData.map(m => {
         let bookmark;
         if (m.bookmarked === false) {
@@ -34,23 +38,46 @@ const filteredData = MockData.filter(
         return (
           <div key={m.id}>
             <ul className="p-5 flex flex-col space-y-4">
-              <li className="p-3 box-border border-4">
-                <motion.div
-                  initial={{ height: "max" }}
-                  animate={{ height: selectedId === m.id ? "max" : "max"}}>
-                  <motion.div className="flex flex-row justify-between">
-                    <motion.div className="text-purple-600 font-bold">{m.company}</motion.div>
-                    <motion.div className="flex space-x-6">
-                    {selectedId !== m.id && (<motion.button
-                      layoutId={m.id}
-                      layout="position"
-                      onClick={() => setSelectedId(m.id)}
+              <li className="p-3 box-border border-4 ">
+                <div>
 
-                      >
-                        <UilExpandAlt/> </motion.button>)}
-                      <motion.button><UilEllipsisV /></motion.button>
-                    </motion.div>
-                  </motion.div>
+<div className='flex justify-between'>
+      <div className="text-purple-600 font-bold">{m.company}</div>
+
+        <motion.div
+        initial={{ height: "max" }}
+        animate={{ height: selectedId === m.id ? "max" : "max"}}>
+            {selectedId !== m.id &&
+            (<button
+              initial={{opacity:1}}
+              exit={{ opacity: 0 }}
+              layoutId={m.id}
+              layout="position"
+              onClick={() => setSelectedId(m.id)}><UilExpandAlt/> </button>)}
+
+              <button
+              className='p-2'
+              onClick={() => {
+                handleOpen()
+                setOptionsId(m.id)}}>
+                <UilEllipsisV />
+                </button>
+                      {optionsId === m.id && isOpen && (
+                        <div className='absolute'>
+                        <ul >
+                          <li className='bg-transparent hover:bg-purple-500 text-purple-700 hover:text-white hover:border-transparent rounded'>
+                            Send Feedback
+                          </li>
+                          <li className='bg-transparent hover:bg-purple-500 text-purple-700 hover:text-white  border-purple-500 hover:border-transparent rounded'>
+                            Report this post
+                          </li>
+                        </ul>
+                        </div>
+              )}
+        </motion.div>
+
+</div>
+
                   <motion.p className="text-3xl pb-3 font-bold">{m.position_title}</motion.p>
                   <motion.div className="flex flex-row space-x-5">
                     <motion.p className="text-purple-600 bg-purple-200 rounded-full pl-2 pr-2">{m.location}</motion.p>
@@ -74,7 +101,10 @@ const filteredData = MockData.filter(
                     </motion.div>
                   </motion.div>
 
-                  <AnimatePresence>
+
+
+                </div>
+                <AnimatePresence>
                   {selectedId === m.id && (
                     <motion.div className="pl-4"
 
@@ -99,15 +129,12 @@ const filteredData = MockData.filter(
                         veteran status, disability, sexual orientation, gender identity,
                          genetic information or any characteristic protected by law.</motion.p>
 
-
                     <motion.p className='flex justify-end' onClick={() => setSelectedId(null)}> <UilTimesSquare/></motion.p>
 
                     </motion.div>
                   )}
 
                 </AnimatePresence>
-                </motion.div>
-
               </li>
             </ul>
           </div>

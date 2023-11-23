@@ -1,21 +1,32 @@
 import DesktopSearchBar from './DesktopSearchBar';
 import { UilBriefcaseAlt, UilUsersAlt, UilHome, UilBoltAlt } from '@iconscout/react-unicons'
+import { useState } from 'react';
 
 
+function DesktopNav( { onSearch , searchTerm } ){
 
-function DesktopNav(){
+const [isOpen, setIsOpen] = useState(false)
+const handleOpen =() => {
+  setIsOpen(!isOpen)
+}
 
 return(
-<nav className="bg-white border-gray-200">
-<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<nav className="bg-white border-gray-200 pt-4 flex justify-between">
 
-<a className="flex items-center space-x-3 ">
-<UilBoltAlt />
-<span className="self-center text-2xl font-semibold whitespace-nowrap ">ePosting</span>
-</a>
+<div className="justify-start mt-4 pl-5">
+  <div className='inline-flex'>
+    <UilBoltAlt />
+    <p className="text-2xl font-semibold ">ePosting</p>
 
-<div className="flex items-center">
-    <div className="relative" data-te-dropdown-ref>
+  </div>
+</div>
+
+<div className="flex justify-center items-center">
+<DesktopSearchBar
+onSearch={onSearch}
+searchTerm={searchTerm}
+/>
+<div className="relative" data-te-dropdown-ref>
       <button
         className="flex items-center whitespace-nowrap rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black hover:bg-primary-600 hover:shadow-purple-300 focus:bg-primary-600 "
         type="button"
@@ -45,21 +56,19 @@ return(
           <a
             className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400"
             data-te-dropdown-item-ref
-            >Action</a
-          >
+            >Job 1 </a>
         </li>
         <li>
           <a
             className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400"
             data-te-dropdown-item-ref
-            >Another action</a
-          >
+            >Job 2</a>
         </li>
         <li>
           <a
             className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400"
             data-te-dropdown-item-ref
-            >Something else here</a>
+            >Job 3</a>
         </li>
       </ul>
     </div>
@@ -69,41 +78,52 @@ return(
 </button>
 </div>
 
-<div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-
-    <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
-    <div className='flex space-x-4 flex-row pr-7'>
+<div className='flex justify-end pr-5'>
+  <div className="flex space-x-3 pr-5">
+    <ul className="flex flex-col mt-4 font-medium rounded-lg">
+    <div className='flex space-x-4 flex-row'>
         <li className="flex flex-col items-center">
             <UilHome />
             <p>Home</p>
         </li>
-
         <li className="flex flex-col items-center">
             <UilBriefcaseAlt/>
             <p>Jobs</p>
         </li>
-
         <li className="flex flex-col items-center">
             <UilUsersAlt />
             <p>Resources</p>
         </li>
-    </div>
-    <div className="flex space-x-4 flex-row">
-            <li className="bg-slate-200 pt-2 pl-2 pr-2 rounded-full">
-              <div className="relative">
-                <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/chat-message--v1.png" alt="chat-message--v1"/>
-                <div className="absolute bottom-5 left-6 h-4 w-4 bg-red-600 rounded-full"></div>
-              </div>
-              </li>
-            <li className="bg-slate-200 bg-cover pt-2 pl-2 pr-2 rounded-full">
-              <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/menu-2.png" alt="menu-2"/>
-            </li>
-    </div>
+        </div>
       </ul>
+  </div>
+
+  <div className='flex pt-3 mb-3 space-x-3'>
+        <p className="bg-slate-200 p-2 rounded-full">
+          <div className="relative">
+            <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/chat-message--v1.png" alt="chat-message--v1"/>
+            <div className="absolute bottom-5 left-6 h-4 w-4 bg-red-600 rounded-full"></div>
+          </div>
+        </p>
+
+        <p onClick={handleOpen} className="bg-slate-200 bg-cover p-2 rounded-full">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/menu-2.png" alt="menu-2"/>
+        </p>
+        {isOpen &&
+          <div className='absolute border border-slate-400 border-3'>
+            <ul>
+              <li>Settings</li>
+              <li>second option</li>
+              <li> third option</li>
+            </ul>
+          </div>
+          }
+  </div>
+
 </div>
 
 
-</div>
+
 </nav>
     )
 }

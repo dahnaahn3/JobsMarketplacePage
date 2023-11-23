@@ -1,4 +1,4 @@
-export const MockData = [
+export const JobsData = [
     {
         id: 1,
         company: 'Google',

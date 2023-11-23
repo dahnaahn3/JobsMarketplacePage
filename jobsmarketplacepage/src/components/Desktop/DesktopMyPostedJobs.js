@@ -1,4 +1,4 @@
-import { MockData } from "../MockData"
+import { JobsData } from "../JobsData"
 import {UilEye} from '@iconscout/react-unicons'
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -24,7 +24,7 @@ export const DesktopMyPostedJobs = () => {
         className="relative flex flex-col mb-3 mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500">
             <h1 className="text-xl pt-3 pb-3 pl-3 font-bold"> My posted jobs </h1>
             <hr />
-            {MockData.slice(0,3).map(m =>{
+            {JobsData.slice(0,3).map(m =>{
                 return(
                     <ul key={m.id} className="pt-3 pl-3 flex items-center space-x-4 space-y-2">
                         <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">{m.company[0]}</div>
@@ -38,7 +38,7 @@ export const DesktopMyPostedJobs = () => {
 
         <AnimatePresence>
         {isOpen &&
-        MockData.slice(3).map(m =>{
+        JobsData.slice(3).map(m =>{
                 return(
                     <ul key={m.id} className="pt-3 pl-3 flex items-center space-x-4 space-y-2">
                         <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">{m.company[0]}</div>

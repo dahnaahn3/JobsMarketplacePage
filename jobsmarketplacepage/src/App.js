@@ -10,7 +10,7 @@ function App() {
   });
 
   const isDesktop = useMediaQuery({
-    query: "(min-device-width: 1200px)",
+    query: "(min-device-width: 1000px)",
   });
 
 
@@ -20,7 +20,7 @@ function App() {
       {isMobileDevice && <Mobile />}
     </MediaQuery>
 
-    <MediaQuery minDeviceWidth={1224}>
+    <MediaQuery minDeviceWidth={1000}>
       {isDesktop && <Desktop />}
     </MediaQuery>
 

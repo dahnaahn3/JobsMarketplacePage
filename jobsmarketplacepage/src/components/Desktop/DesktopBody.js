@@ -7,11 +7,11 @@ import {
   } from "tw-elements";
 import { useEffect, useState } from "react";
 import DesktopBodyHeader from "./DesktopBodyHeader";
-import { MockData } from "../MockData";
+import { JobsData } from "../JobsData";
 
 
 
-function DesktopBody(){
+function DesktopBody({searchTerm, onSearchTerm}){
   const [experienceLevel, setExperienceLevel] = useState([])
   const [date, setDate] = useState('')
   const [onsiteOrRemote, setOnsiteOrRemote]=useState([])
@@ -36,11 +36,13 @@ function DesktopBody(){
       <div>
         <div>
           <DesktopJobPosting
-          MockData={MockData}
+          JobsData={JobsData}
           experienceLevel={experienceLevel}
           onExperienceLevel={setExperienceLevel}
           date={date}
           onsiteOrRemote={onsiteOrRemote}
+          searchTerm={searchTerm}
+          onSearchTerm={onSearchTerm}
           />
         </div>
     </div>

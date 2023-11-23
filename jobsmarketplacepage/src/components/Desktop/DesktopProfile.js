@@ -6,7 +6,7 @@ function DesktopProfile(){
 <>
 <div className="flex flex-col pb-3">
     <div className="justify-center items-center">
-        <div className="relative flex flex-col items-center mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500">
+        <div className=" flex flex-col items-center mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500">
             <div className="relative flex h-32 w-full justify-center rounded-xl" >
                 <div className="absolute -bottom-12 flex h-[100px] w-[100px] items-center justify-center rounded-full border-[4px] bg-white border-black">
                     <img className="h-full w-full rounded-full" src='https://play.nintendo.com/images/PLAY-6148-PikminFriendPageAdditions-Masthead-Blue_v01.b19a16e5.ed4a1562.png' alt="" />

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import DesktopSearchBar from './DesktopSearchBar';
 
 
-function DesktopJobPosting({ MockData, experienceLevel, date }) {
+function DesktopJobPosting({ MockData, experienceLevel, date, onsiteOrRemote }) {
 const [selectedId, setSelectedId] = useState(null);
 const [searchTerm, setSearchTerm] = useState("")
 
@@ -13,9 +13,9 @@ const filteredData = MockData.filter(
   (m) =>
     (m.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
     m.position_title.toLowerCase().includes(searchTerm.toLowerCase())) &&
-    (experienceLevel.length === 0 || experienceLevel.includes(m.level)) && (
-      date.length === 0 || date.toString().includes(m.available_until)
-    )
+    (experienceLevel.length === 0 || experienceLevel.includes(m.level)) &&
+    (date.length === 0 || date.toString().includes(m.available_until)) &&
+      (onsiteOrRemote.length ===0 || onsiteOrRemote.includes(m.onsite_or_remote))
 );
 
 

@@ -14,6 +14,7 @@ import { MockData } from "../MockData";
 function DesktopBody(){
   const [experienceLevel, setExperienceLevel] = useState([])
   const [date, setDate] = useState('')
+  const [onsiteOrRemote, setOnsiteOrRemote]=useState([])
 
     useEffect(( )=> {
         initTE({ Dropdown, Ripple });
@@ -28,6 +29,8 @@ function DesktopBody(){
      onExperienceLevel={setExperienceLevel}
      date={date}
      onSetDate={setDate}
+     onsiteOrRemote={onsiteOrRemote}
+     onOnsiteOrRemote={setOnsiteOrRemote}
      />
 
       <div>
@@ -36,7 +39,9 @@ function DesktopBody(){
           MockData={MockData}
           experienceLevel={experienceLevel}
           onExperienceLevel={setExperienceLevel}
-          date={date} />
+          date={date}
+          onsiteOrRemote={onsiteOrRemote}
+          />
         </div>
     </div>
     </div>

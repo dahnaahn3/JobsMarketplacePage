@@ -21,7 +21,7 @@ export const MockData = [
                     "Comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
         level: "Director",
-        onsite_or_remote: "onsite"
+        onsite_or_remote: "On-site"
 
     },
 
@@ -47,7 +47,7 @@ export const MockData = [
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
         level: "Entry",
-        onsite_or_remote: "remote"
+        onsite_or_remote: "Remote"
 
     },
     {
@@ -72,7 +72,7 @@ export const MockData = [
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
         level: "Internship",
-        onsite_or_remote: "remote"
+        onsite_or_remote: "Remote"
 
     },
     {
@@ -97,7 +97,7 @@ export const MockData = [
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
         level: "Mid-Senior",
-        onsite_or_remote: "onsite"
+        onsite_or_remote: "On-site"
 
     },
     {
@@ -122,7 +122,7 @@ export const MockData = [
                     "comprehensive benefits":"Enjoy a robust benefits package, including health, dental, and vision coverage.",
                 },
         level: "Associate",
-        onsite_or_remote: "onsite"
+        onsite_or_remote: "On-site"
 
     },
 ]

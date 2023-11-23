@@ -6,7 +6,7 @@ import {
 import { useEffect } from "react";
 import DesktopDropdownMenus from "./DesktopDropdownMenus";
 
-function DesktopBodyHeader({experienceLevel, onExperienceLevel, onSetDate, date}){
+function DesktopBodyHeader({experienceLevel, onExperienceLevel, onSetDate, date, onsiteOrRemote, onOnsiteOrRemote}){
 
     useEffect(( )=> {
         initTE({ Dropdown, Ripple });
@@ -24,6 +24,8 @@ function DesktopBodyHeader({experienceLevel, onExperienceLevel, onSetDate, date}
           onExperienceLevel={onExperienceLevel}
           date={date}
           onSetDate={onSetDate}
+          onOnsiteOrRemote={onOnsiteOrRemote}
+          onsiteOrRemote={onsiteOrRemote}
           />
     </div>
 

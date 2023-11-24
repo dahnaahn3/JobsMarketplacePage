@@ -75,7 +75,6 @@ const filteredData = JobsData.filter(
                         </div>
               )}
         </motion.div>
-
 </div>
 
                   <motion.p className="text-3xl pb-3 font-bold">{m.position_title}</motion.p>
@@ -119,16 +118,13 @@ const filteredData = JobsData.filter(
                       <p className='text-lg font-bold'>Work type: </p>
                       <motion.p>{m.onsite_or_remote}</motion.p>
                       </div>
-
                     </motion.div>
-
                     <motion.h1 className='text-lg font-bold'>Requirements</motion.h1>
                     {m.skills.map((skill)=>(
                         <motion.li className='list-disc'>{skill}</motion.li>
                     ))}
                     </div>
                     <hr />
-
                     {Object.entries(m.benefits).map(([title, description])=>(
                         <div className='py-4'>
                         <motion.p className='text-lg font-bold'>{title}</motion.p>
@@ -140,9 +136,7 @@ const filteredData = JobsData.filter(
                         without regards to race, sex, age, color, religion, national origin,
                         veteran status, disability, sexual orientation, gender identity,
                          genetic information or any characteristic protected by law.</motion.p>
-
                     <motion.p className='flex justify-end' onClick={() => setSelectedId(null)}> <UilTimesSquare/></motion.p>
-
                     </motion.div>
                   )}
 

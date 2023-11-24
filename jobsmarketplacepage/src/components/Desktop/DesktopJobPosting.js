@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 
 function DesktopJobPosting({ JobsData, experienceLevel, date, onsiteOrRemote, searchTerm }) {
-const [selectedId, setSelectedId] = useState(null);
-const [isOpen, setIsOpen] = useState(false)
-const [optionsId, setOptionsId] = useState(null)
+const [selectedId, setSelectedId] = useState(null); /* selected ID for info expansion */
+const [isOpen, setIsOpen] = useState(false) /* setting whether options is open or not */
+const [optionsId, setOptionsId] = useState(null) /* setting ID for the specific options dropdown being opened */
 
 
 const handleOpen = () => {
@@ -107,9 +107,21 @@ const filteredData = JobsData.filter(
                 <AnimatePresence>
                   {selectedId === m.id && (
                     <motion.div className="pl-4"
-
                     layoutid={selectedId}>
                     <div className='py-4'>
+                    <hr />
+                    <motion.div className="inline-flex flex-row space-x-5 py-3">
+                      <div className='flex flex-row space-x-2'>
+                      <p className='text-lg font-bold'>Level: </p>
+                      <motion.p>{m.level}</motion.p>
+                      </div>
+                      <div className='inline-flex flex-row space-x-2'>
+                      <p className='text-lg font-bold'>Work type: </p>
+                      <motion.p>{m.onsite_or_remote}</motion.p>
+                      </div>
+
+                    </motion.div>
+
                     <motion.h1 className='text-lg font-bold'>Requirements</motion.h1>
                     {m.skills.map((skill)=>(
                         <motion.li className='list-disc'>{skill}</motion.li>

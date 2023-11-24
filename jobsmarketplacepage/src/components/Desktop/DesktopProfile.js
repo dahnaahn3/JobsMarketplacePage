@@ -27,7 +27,7 @@ return(
         <div className="flex flex-col items-center mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500">
             <div style ={{background: "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(220,184,260,1) 56%)"}} className="relative flex h-32 w-full justify-center rounded-xl" >
                 <div className="absolute -bottom-12 flex h-[100px] w-[100px] items-center justify-center rounded-full border-[4px] bg-white border-black">
-                    <img className="h-full w-full rounded-full" src='https://play.nintendo.com/images/PLAY-6148-PikminFriendPageAdditions-Masthead-Blue_v01.b19a16e5.ed4a1562.png' alt="" />
+                    <img className="h-full w-full rounded-full" src={p.photo} alt="" />
                 {online}
             </div>
             </div>

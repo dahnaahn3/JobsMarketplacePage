@@ -4,10 +4,24 @@ import {
     Ripple,
     initTE,
   } from "tw-elements";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
-function MobileNav() {
+function MobileNav({onSearch, searchTerm}) {
+
+const [isOpen, setIsOpen] = useState(false) /* setting whether the ellipsis options is open */
+
+const handleOpen = () => {
+    setIsOpen(!isOpen)
+}
+console.log("is it open?", isOpen)
+
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        onSearch(value);
+      }; /*retrieves the search input */
+
+
 
     useEffect(( )=> {
         initTE({ Dropdown, Ripple });
@@ -22,18 +36,21 @@ function MobileNav() {
         </div>
 
 
-        <div className="relative flex ">
+        <form onSubmit={(e) => e.preventDefault()} className="relative flex ">
         <label htmlFor="simple-search"></label>
             <div className="absolute inset-y-0 start-0 flex items-center justify-center ps-3">
                 <UilSearch  style={{ height: '15px', width: '15px' }}  />
             </div>
-        <input type="text"
+        <input
+        value={searchTerm}
+        onChange={handleSearch}
+        type="text"
         id="simple-search"
         className="bg-gray-50 border border-gray-300
         text-gray-900 text-sm rounded-lg
         focus:ring-purple-500 focus:border-purple-500
         block w-40 pl-9" placeholder="Search" required/>
-        </div>
+        </form>
 
 
         <div className="relative" data-te-dropdown-ref>
@@ -62,33 +79,39 @@ function MobileNav() {
             aria-labelledby="dropdownMenuButton1"
             data-te-dropdown-menu-ref>
             <li>
-            <a
+            <button
+
                 className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                 data-te-dropdown-item-ref
-                >Action</a
-            >
+                >Job 1 </button>
             </li>
             <li>
-            <a
+            <button
                 className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                 data-te-dropdown-item-ref
-                >Another action</a
-            >
+                >Job 2</button>
             </li>
             <li>
-            <a
+            <button
                 className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                 data-te-dropdown-item-ref
-                >Something else here</a
-            >
+                >Job 3</button>
             </li>
         </ul>
         </div>
 
 
         <div className='flex justify-self-end space-x-2'>
-            <UilFilter className="border border-gray-200 h-[30px] w-[30px] p-1 rounded-full bg-gray-200"/>
-            <UilEllipsisV className="border border-gray-200 h-[30px] w-[30px] p-1 rounded-full bg-gray-200"/>
+            <button><UilFilter className="border border-gray-200 h-[30px] w-[30px] p-1 rounded-full bg-gray-200"/></button>
+            <button onClick={handleOpen}> <UilEllipsisV className="border border-gray-200 h-[30px] w-[30px] p-1 rounded-full bg-gray-200"/></button>
+            {isOpen &&
+                <div className='rounded-md absolute bg-purple-300 mt-10 text-center'>
+                  <ul>
+                    <button className=''>Settings</button>
+                    <button>Help</button>
+                  </ul>
+                </div>
+                }
         </div>
     </div>
 

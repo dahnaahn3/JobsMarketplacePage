@@ -44,16 +44,13 @@ const filteredData = JobsData.filter(
 <div className='flex justify-between'>
       <div className="text-purple-600 font-bold">{m.company}</div>
 
-        <motion.div
-        initial={{ height: "max" }}
-        animate={{ height: selectedId === m.id ? "max" : "max"}}>
+        <div>
             {selectedId !== m.id &&
-            (<button
-              initial={{opacity:1}}
-              exit={{ opacity: 0 }}
+            (<motion.button
               layoutid={m.id}
-              layout="position"
-              onClick={() => setSelectedId(m.id)}><UilExpandAlt/> </button>)}
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setSelectedId(m.id)}><UilExpandAlt/> </motion.button>)}
 
               <button
               className='p-2'
@@ -62,6 +59,7 @@ const filteredData = JobsData.filter(
                 setOptionsId(m.id)}}>
                 <UilEllipsisV />
                 </button>
+
                       {optionsId === m.id && isOpen && (
                         <div className='absolute'>
                         <ul >
@@ -74,73 +72,76 @@ const filteredData = JobsData.filter(
                         </ul>
                         </div>
               )}
-        </motion.div>
+        </div>
 </div>
 
-                  <motion.p className="text-3xl pb-3 font-bold">{m.position_title}</motion.p>
-                  <motion.div className="flex flex-row space-x-5">
-                    <motion.p className="text-purple-600 bg-purple-200 rounded-full pl-2 pr-2">{m.location}</motion.p>
-                    <motion.p className="text-purple-600 bg-purple-200 rounded-full pl-2 pr-2">{m.work_type}</motion.p>
-                    <motion.p className="text-purple-600 bg-purple-200 rounded-full pl-2 pr-2">{m.salary_range}</motion.p>
-                  </motion.div>
-                  <motion.div className="pt-3 pb-3 top-element-formatting ">
+                  <p className="text-3xl pb-3 font-bold">{m.position_title}</p>
+                  <div className="flex flex-row space-x-5">
+                    <p className="text-purple-600 bg-purple-200 rounded-full pl-2 pr-2">{m.location}</p>
+                    <p className="text-purple-600 bg-purple-200 rounded-full pl-2 pr-2">{m.work_type}</p>
+                    <p className="text-purple-600 bg-purple-200 rounded-full pl-2 pr-2">{m.salary_range}</p>
+                  </div>
+                  <div className="pt-3 pb-3 top-element-formatting ">
                     <span className="font-bold">About: </span>
                     <span className="second-word-formatting">{m.description}</span>
-                  </motion.div>
-                  <motion.div className="flex flex-row justify-between">
-                    <motion.div className="flex flex-row space-x-5 pt-2">
-                      <motion.p className="flex"><UilClock />{m.available_until}</motion.p>
-                      <motion.p className="flex"><UilCalender />{m.days_posted_ago}</motion.p>
-                      <motion.p className="flex"><UilUsdCircle />{m.employee_bonus}</motion.p>
-                    </motion.div>
-                    <motion.div className="flex flex-row space-x-5">
+                  </div>
+                  <div className="flex flex-row justify-between">
+                    <div className="flex flex-row space-x-5 pt-2">
+                      <p className="flex"><UilClock />{m.available_until}</p>
+                      <p className="flex"><UilCalender />{m.days_posted_ago}</p>
+                      <p className="flex"><UilUsdCircle />{m.employee_bonus}</p>
+                    </div>
+                    <div className="flex flex-row space-x-5">
                       <span>{bookmark}</span>
-                      <motion.p className="flex box-border border-2 text-purple-600 border-purple-600 p-2 rounded-full"><UilCommentAlt className="mr-2" />{m.contact}</motion.p>
+                      <p className="flex box-border border-2 text-purple-600 border-purple-600 p-2 rounded-full"><UilCommentAlt className="mr-2" />{m.contact}</p>
                       <button className="bg-purple-600 text-white rounded-full pl-3 pr-3">Apply</button>
-                    </motion.div>
-                  </motion.div>
-
-
-
+                    </div>
+                  </div>
                 </div>
+
                 <AnimatePresence>
                   {selectedId === m.id && (
                     <motion.div className="pl-4"
-                    layoutid={selectedId}>
+                    initial={{ opacity: 0, y: -100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    
+
+                    layoutid={selectedId}
+                    >
                     <div className='py-4'>
                     <hr />
-                    <motion.div className="inline-flex flex-row space-x-5 py-3">
+                    <div className="inline-flex flex-row space-x-5 py-3">
                       <div className='flex flex-row space-x-2'>
                       <p className='text-lg font-bold'>Level: </p>
-                      <motion.p>{m.level}</motion.p>
+                      <p>{m.level}</p>
                       </div>
                       <div className='inline-flex flex-row space-x-2'>
                       <p className='text-lg font-bold'>Work type: </p>
-                      <motion.p>{m.onsite_or_remote}</motion.p>
+                      <p>{m.onsite_or_remote}</p>
                       </div>
-                    </motion.div>
-                    <motion.h1 className='text-lg font-bold'>Requirements</motion.h1>
+                    </div>
+                    <h1 className='text-lg font-bold'>Requirements</h1>
                     {m.skills.map((skill)=>(
-                        <motion.li className='list-disc'>{skill}</motion.li>
+                        <li className='list-disc'>{skill}</li>
                     ))}
                     </div>
                     <hr />
                     {Object.entries(m.benefits).map(([title, description])=>(
                         <div className='py-4'>
-                        <motion.p className='text-lg font-bold'>{title}</motion.p>
-                        <motion.p>{description}</motion.p>
+                        <p className='text-lg font-bold'>{title}</p>
+                        <p>{description}</p>
                         </div>
                     ))}
                     <hr />
-                    <motion.p className='py-4'>The company is an equal opportunity employer and will consider all applications
+                    <p className='py-4'>The company is an equal opportunity employer and will consider all applications
                         without regards to race, sex, age, color, religion, national origin,
                         veteran status, disability, sexual orientation, gender identity,
-                         genetic information or any characteristic protected by law.</motion.p>
-                    <motion.p className='flex justify-end' onClick={() => setSelectedId(null)}> <UilTimesSquare/></motion.p>
+                        genetic information or any characteristic protected by law.</p>
+                    <p className='flex justify-end' onClick={() => setSelectedId(null)}> <UilTimesSquare/></p>
                     </motion.div>
                   )}
-
                 </AnimatePresence>
+
               </li>
             </ul>
           </div>

@@ -4,16 +4,27 @@ import { useState } from 'react';
 import logo from '../epostinglogo.png'
 
 
-function DesktopNav( { onSearch , searchTerm } ){
+
+function DesktopNav( { onSearch , searchTerm, ProfileData } ){
 
 const [isOpen, setIsOpen] = useState(false)
 const handleOpen =() => {
   setIsOpen(!isOpen)
 }
 
+
 return(
+
 <nav className="bg-white border-gray-200 pt-4 pb-4 flex justify-between">
 
+{ProfileData.map((p) => {
+  let hasMessages;
+  if(p.has_messages===true){
+      hasMessages = <div className="absolute bottom-5 left-6 h-4 w-4 bg-red-600 rounded-full"></div>
+}
+
+return(
+<>
 <div className="justify-start mt-4 pl-5">
   <div className='inline-flex'>
     <img
@@ -25,6 +36,7 @@ return(
 </div>
 
 <div className="flex justify-center items-center">
+
 <DesktopSearchBar
 onSearch={onSearch}
 searchTerm={searchTerm}
@@ -102,12 +114,12 @@ searchTerm={searchTerm}
     </div>
 
   <div className='flex pt-3 mb-3 space-x-3'>
-          <p className="bg-slate-200 p-2 rounded-full">
+          <div className="bg-slate-200 p-2 rounded-full">
             <div className="relative">
               <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/chat-message--v1.png" alt="chat-message--v1"/>
-              <div className="absolute bottom-5 left-6 h-4 w-4 bg-red-600 rounded-full"></div>
+              {hasMessages}
             </div>
-          </p>
+          </div>
 
     <div className='relative'>
         <p onClick={handleOpen} className="bg-slate-200 bg-cover p-2 rounded-full">
@@ -124,13 +136,12 @@ searchTerm={searchTerm}
                 </div>
                 }
         </div>
-
     </div>
-
   </div>
-
 </div>
-
+</>
+)
+})}
 </nav>
     )
 }

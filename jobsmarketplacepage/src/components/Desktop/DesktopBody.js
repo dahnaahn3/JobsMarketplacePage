@@ -8,6 +8,7 @@ import {
 import { useEffect, useState } from "react";
 import DesktopBodyHeader from "./DesktopBodyHeader";
 import { JobsData } from "../JobsData";
+import { ProfileData } from "../ProfileData";
 
 
 
@@ -48,7 +49,7 @@ function DesktopBody({searchTerm, onSearchTerm}){
     </div>
     </div>
     <div style={{width: "25%"}} className="mt-3">
-      <DesktopProfile />
+      <DesktopProfile ProfileData={ProfileData}/>
     </div>
 
 </div>

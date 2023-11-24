@@ -51,7 +51,7 @@ const filteredData = JobsData.filter(
             (<button
               initial={{opacity:1}}
               exit={{ opacity: 0 }}
-              layoutId={m.id}
+              layoutid={m.id}
               layout="position"
               onClick={() => setSelectedId(m.id)}><UilExpandAlt/> </button>)}
 
@@ -108,7 +108,7 @@ const filteredData = JobsData.filter(
                   {selectedId === m.id && (
                     <motion.div className="pl-4"
 
-                    layoutId={selectedId}>
+                    layoutid={selectedId}>
                     <div className='py-4'>
                     <motion.h1 className='text-lg font-bold'>Requirements</motion.h1>
                     {m.skills.map((skill)=>(

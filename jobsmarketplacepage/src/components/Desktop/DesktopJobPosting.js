@@ -10,7 +10,6 @@ const [selectedId, setSelectedId] = useState(null); /* selected ID for info expa
 const [isOpen, setIsOpen] = useState(false) /* setting whether options is open or not */
 const [optionsId, setOptionsId] = useState(null) /* setting ID for the specific options dropdown being opened */
 
-
 const handleOpen = () => {
   setIsOpen(!isOpen)
 }
@@ -23,7 +22,6 @@ const filteredData = JobsData.filter(
     (date.length === 0 || date.toString().includes(m.available_until)) &&
       (onsiteOrRemote.length ===0 || onsiteOrRemote.includes(m.onsite_or_remote))
 );
-
 
   return (
     <>
@@ -104,7 +102,7 @@ const filteredData = JobsData.filter(
                     <motion.div className="pl-4"
                     initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
-                    
+
 
                     layoutid={selectedId}
                     >

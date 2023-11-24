@@ -1,12 +1,13 @@
 import { JobsData } from "../JobsData"
-import {UilEye} from '@iconscout/react-unicons'
+import {UilEye, UilEyeSlash} from '@iconscout/react-unicons'
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export const DesktopMyPostedJobs = () => {
-    const[isOpen, setisOpen] = useState(false);
 
-    const[showButton, setShowButton] = useState(true)
+    const[isOpen, setisOpen] = useState(false); /* setting if jobs is expanded */
+
+    const[showButton, setShowButton] = useState(true) /* setting if button is visable */
 
     function handleOpen(){
         setisOpen(!isOpen)
@@ -40,6 +41,7 @@ export const DesktopMyPostedJobs = () => {
         {isOpen &&
         JobsData.slice(3).map(m =>{
                 return(
+                    <div>
                     <ul key={m.id} className="pt-3 pl-3 flex items-center space-x-4 space-y-2">
                         <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">{m.company[0]}</div>
                         <div>
@@ -47,13 +49,24 @@ export const DesktopMyPostedJobs = () => {
                         <li className="text-gray-600">Company: {m.company}</li>
                         </div>
                     </ul>
+                    </div>
                 )
             })}
         </AnimatePresence>
 
-            <div className="p-3">
-                {showButton && <button className="bg-purple-300 justify-center flex w-full text-purple-600 text-white rounded-full p-2" onClick={() =>{handleOpen(); handleButton()}}> <UilEye />View more</button>}
-            </div>
+        <div className="p-3">
+        {isOpen && <button
+        className="bg-purple-300 justify-center flex w-full text-purple-600 text-white rounded-full p-2"
+        onClick={() => {handleOpen(null); handleButton(null)}}> <UilEyeSlash/>View less </button>}
+        </div>
+    
+        <div className="p-3">
+            {showButton && <button
+            className="bg-purple-300 justify-center flex w-full text-purple-600 text-white rounded-full p-2"
+            onClick={() =>{handleOpen(); handleButton()}}>
+            <UilEye />View more</button>}
+        </div>
+
         </motion.div>
 
     </div>

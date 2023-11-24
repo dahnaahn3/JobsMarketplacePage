@@ -1,5 +1,5 @@
 import React from 'react'
-import {UilEye} from '@iconscout/react-unicons'
+import {UilEye, UilEyeSlash} from '@iconscout/react-unicons'
 import { JobsData } from '../JobsData'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
@@ -50,8 +50,16 @@ const DesktopSavedReferral = () => {
             })}
         </AnimatePresence>
 
+        <div className="p-3">
+                {isOpen && <button
+                className="bg-purple-300 justify-center flex w-full text-purple-600 text-white rounded-full p-2"
+                onClick={() =>{handleOpen(null); handleButton(null)}}> <UilEyeSlash />View less</button>}
+            </div>
+
             <div className="p-3">
-                {showButton && <button className="bg-purple-300 justify-center flex w-full text-purple-600 text-white rounded-full p-2" onClick={() =>{handleOpen(); handleButton()}}> <UilEye />View more</button>}
+                {showButton &&
+                <button className="bg-purple-300 justify-center flex w-full text-purple-600 text-white rounded-full p-2"
+                onClick={() =>{handleOpen(); handleButton()}}> <UilEye />View more</button>}
             </div>
         </motion.div>
 

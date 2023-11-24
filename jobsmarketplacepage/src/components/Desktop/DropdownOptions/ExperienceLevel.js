@@ -5,20 +5,24 @@ export const ExperienceLevel = ({ experienceLevel, onExperienceLevel }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(true);
   };
+
+  const handleLeave =() => {
+    setIsOpen(false)
+  }
 
   const handleCheckboxChange = (level) => {
     const updatedExperienceLevel = experienceLevel.includes(level)
       ? experienceLevel.filter((l) => l !== level)
       : [...experienceLevel, level];
     onExperienceLevel(updatedExperienceLevel);
+    setIsOpen(false)
   };
 
   return (
-    <li>
+    <li onMouseEnter={handleOpen} onMouseLeave={handleLeave}>
       <button
-        onClick={handleOpen}
         id="dropdownDefault"
         data-dropdown-toggle="dropdown"
         className="text-black h-max w-max bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"

@@ -1,7 +1,10 @@
 
-import { UilClock, UilTimesSquare, UilCalender, UilUsdCircle, UilBookmark, UilCommentAlt, UilExpandAlt, UilEllipsisV } from '@iconscout/react-unicons';
+import { UilClock, UilTimesSquare, UilCalender, UilUsdCircle,
+  UilBookmark, UilCommentAlt, UilExpandAlt, UilEllipsisV,
+  UilShareAlt, UilLink,  UilEyeSlash, UilUserPlus  } from '@iconscout/react-unicons';
 import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaRegFlag } from "react-icons/fa6";
 
 
 
@@ -35,11 +38,12 @@ const filteredData = JobsData.filter(
 
         return (
           <div key={m.id}>
-            <ul className="p-5 flex flex-col space-y-4">
-              <li className="p-3 box-border border-4 ">
+            <ul className="flex flex-col space-y-4" style={{paddingBottom:"16px"}}>
+              <li className="p-3 box-border border-2 border-slate-300 bg-white">
                 <div>
 
-<div className='flex justify-between'>
+<div className='flex justify-between '
+style={{width:"1216px"}}>
       <div className="text-purple-600 font-bold">{m.company}</div>
 
         <div>
@@ -59,13 +63,27 @@ const filteredData = JobsData.filter(
                 </button>
 
                       {optionsId === m.id && isOpen && (
-                        <div className='absolute'>
+                        <div className='absolute bg-white border border-slate-300 rounded-lg p-2'>
                         <ul >
-                          <li className='bg-transparent hover:bg-purple-500 text-purple-700 hover:text-white hover:border-transparent rounded'>
-                            Send Feedback
+                        <li className='hover:text-purple-600 flex'>
+                          <UilShareAlt style={{ marginRight: '8px' }} />
+                          Share
+                        </li>
+                          <li className='hover:text-purple-600 flex'>
+                            <UilLink style={{ marginRight: '8px' }}/>
+                            Copy
                           </li>
-                          <li className='bg-transparent hover:bg-purple-500 text-purple-700 hover:text-white  border-purple-500 hover:border-transparent rounded'>
-                            Report this post
+                          <li className='hover:text-purple-600 flex'>
+                            <UilEyeSlash style={{ marginRight: '8px' }}/>
+                            Hide
+                          </li>
+                          <li className='hover:text-purple-600 flex'>
+                            <UilUserPlus style={{ marginRight: '8px' }}/>
+                            Follow
+                          </li>
+                          <li className='hover:text-purple-600 flex'>
+                            <FaRegFlag style={{ marginRight: '8px' }}/>
+                            Report
                           </li>
                         </ul>
                         </div>

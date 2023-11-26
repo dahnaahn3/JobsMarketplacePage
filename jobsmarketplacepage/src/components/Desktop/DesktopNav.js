@@ -1,8 +1,10 @@
 import DesktopSearchBar from './DesktopSearchBar';
-import { UilBriefcaseAlt, UilUsersAlt, UilHome, UilBoltAlt } from '@iconscout/react-unicons'
+import { UilBriefcaseAlt, UilUsersAlt, UilHome} from '@iconscout/react-unicons'
 import { useState } from 'react';
 import logo from '../epostinglogo.png'
-
+import Home from '../home.png'
+import Suitcase from '../suitcase.png'
+import Resources from '../resources.png'
 
 
 function DesktopNav( { onSearch , searchTerm, ProfileData } ){
@@ -25,12 +27,12 @@ return(
 
 return(
 <>
-<div className="justify-start mt-4 pl-5">
+<div className="justify-start mt-4 pl-8">
   <div className='inline-flex'>
     <img
     className='h-8'
     src={logo} alt="logo" />
-    <p className="text-2xl font-semibold ">ePosting</p>
+    <p className="text-2xl font-semibold pl-3">ePosting</p>
 
   </div>
 </div>
@@ -94,19 +96,26 @@ searchTerm={searchTerm}
 </div>
 
 <div className='flex justify-end pr-5'>
-  <div className="flex space-x-3 pr-5">
+  <div className="flex space-x-3 pr-10">
       <ul className="flex flex-col mt-4 font-medium rounded-lg">
-      <div className='flex space-x-4 flex-row'>
+      <div className='flex space-x-6 flex-row'>
           <li className="flex flex-col items-center">
-              <UilHome />
+          <img
+          className='h-6'
+          src={Home} alt="logo" />
               <p>Home</p>
           </li>
           <li className="flex flex-col items-center">
-              <UilBriefcaseAlt/>
+          <img
+          className='h-6'
+          src={Suitcase} alt="logo" />
+
               <p>Jobs</p>
           </li>
           <li className="flex flex-col items-center">
-              <UilUsersAlt />
+          <img
+          className='h-6'
+          src={Resources} alt="logo" />
               <p>Resources</p>
           </li>
           </div>
@@ -128,7 +137,7 @@ searchTerm={searchTerm}
 
         <div>
               {isOpen &&
-                <div className='absolute top-full right-0 mt-2 p-2 rounded-lg bg-white'>
+                <div className='absolute z-10 right-0 mt-2 p-2 rounded-lg bg-white'>
                   <ul>
                     <button>Settings</button>
                     <button>Help</button>

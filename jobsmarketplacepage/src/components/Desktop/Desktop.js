@@ -10,10 +10,10 @@ function Desktop(){
     const [searchTerm, setSearchTerm] = useState("")
 
     return(
-        <>
-        <DesktopNav ProfileData={ProfileData}searchTerm={searchTerm} onSearch={setSearchTerm}/>
-        <DesktopBody JobsData={JobsData} searchTerm={searchTerm} />
-        </>
+        <div>
+        <DesktopNav ProfileData={ProfileData}searchTerm={searchTerm} onSearch={setSearchTerm} />
+        <DesktopBody JobsData={JobsData} searchTerm={searchTerm}/>
+        </div>
     )
 }
 export default Desktop

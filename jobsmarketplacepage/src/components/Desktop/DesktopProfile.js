@@ -21,8 +21,8 @@ return(
 
     }
     return(
-<>
-<div key={p.id} className="flex flex-col static pb-3">
+<div>
+<div key={p.id} className="flex flex-col static pb-3" style={{width:"400px"}}>
     <div className="justify-center items-center">
         <div className="flex flex-col items-center mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500">
             <div style ={{background: "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(220,184,260,1) 56%)"}} className="relative flex h-32 w-full justify-center rounded-xl" >
@@ -86,7 +86,7 @@ return(
 
 <DesktopMyPostedJobs />
 <DesktopSavedReferral />
-</>
+</div>
 )
 })}
 </>

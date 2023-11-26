@@ -14,10 +14,13 @@ function DesktopBodyHeader({experienceLevel, onExperienceLevel, onSetDate, date,
 
     return(
       <>
-      <div className="pl-3 pt-3">
-      <ul className="p-2 bg-white border-solid flex flex-row justify-center space-x-10">
-          <li className="hover:text-purple-300">Latest Posts</li>
-          <li className="hover:text-purple-300">Recent Activities</li>
+      <div>
+      <ul className="bg-white border-solid flex justify-right space-x-10 pt-10"
+      style={{height:"100px",paddingLeft: "20px"}}>
+
+          <li className="hover:text-purple-600 hover:underline" style={{height:"22px"}}>Latest Posts</li>
+          <li className="hover:text-purple-600 hover:underline ">Recent Activities</li>
+
       </ul>
 
       <div className=" flex justify-center ">

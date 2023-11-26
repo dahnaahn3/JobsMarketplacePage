@@ -22,8 +22,9 @@ function DesktopBody({searchTerm, onSearchTerm}){
     }, []);
 
   return(
-<div className="bg-slate-100 pt-5 pl-10 pr-10 flex justify-between">
-    <div style={{width: "70%"}}>
+<div className="pt-5 flex absolute"
+style={{backgroundColor:"#f8f7fa"}}>
+    <div style={{paddingLeft: "120px", paddingRight:"64px"}}>
 
     <DesktopBodyHeader
      experienceLevel={experienceLevel}
@@ -48,7 +49,10 @@ function DesktopBody({searchTerm, onSearchTerm}){
         </div>
     </div>
     </div>
-    <div style={{width: "25%"}} className="mt-3">
+
+    <div
+    style={{paddingRight: "120px"}}
+    className="mt-3">
       <DesktopProfile ProfileData={ProfileData}/>
     </div>
 

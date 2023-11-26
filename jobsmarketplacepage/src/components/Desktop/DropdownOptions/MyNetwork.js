@@ -21,7 +21,7 @@ const handleClose =() => {
         data-dropdown-toggle="dropdown"
         className="text-black h-max w-max bg-primary-700 hover:bg-primary-800
         focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium
-        rounded-full border border-black text-sm px-4 py-2.5 text-center inline-flex items-center"
+        rounded-full border border-black text-sm px-4 py-2.5 m-3 text-center inline-flex items-center"
         type="button"
       >
         {isOpen ? 'My network' : 'My network'}

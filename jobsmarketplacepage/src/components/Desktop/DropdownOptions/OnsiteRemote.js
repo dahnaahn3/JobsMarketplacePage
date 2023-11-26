@@ -24,7 +24,7 @@ const handleCheckboxChange = (or) => {
 
         id="dropdownDefault"
         data-dropdown-toggle="dropdown"
-        className="text-black border border-black  bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-full text-sm px-4 py-2.5 text-center inline-flex items-center"
+        className="text-black border border-black m-3 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-full text-sm px-4 py-2.5 text-center inline-flex items-center"
         type="button"
         >
         {isOpen ? 'On-site/Remote' : 'On-site/Remote'}

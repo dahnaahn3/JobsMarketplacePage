@@ -27,7 +27,7 @@ return(
 
 return(
 <>
-<div className="justify-start mt-4 pl-8">
+<div className="justify-start mt-4 pl-12">
   <div className='inline-flex'>
     <img
     className='h-8'
@@ -53,7 +53,7 @@ searchTerm={searchTerm}
         data-te-ripple-init
         data-te-ripple-color="white">
         Jobs
-        <span className="ml-2 w-2">
+        <span className="w-2">
           <svg
             viewBox="0 0 20 20"
             fill="currentColor"

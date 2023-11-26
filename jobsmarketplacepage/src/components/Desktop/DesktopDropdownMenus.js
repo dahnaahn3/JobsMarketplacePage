@@ -34,7 +34,7 @@ onsiteOrRemote={onsiteOrRemote}
 
 <MyNetwork />
 
-<div className="text-black h-max w-max bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center">
+<div className="text-black h-max w-max bg-primary-700 m-3 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center">
   <button onClick={handleReset}>Reset Filters</button>
 </div>
 

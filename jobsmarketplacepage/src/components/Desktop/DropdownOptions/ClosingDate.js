@@ -27,9 +27,9 @@ const handleDate = (selectedDate) => {
 
         id="dropdownDefault"
         data-dropdown-toggle="dropdown"
-        className="text-black bg-primary-700 font-medium rounded-full 
+        className="text-black bg-primary-700 font-medium rounded-full
         text-sm px-4 py-2.5 text-center inline-flex items-center
-        border border-black"
+        border border-black m-3"
         type="button">
         {isOpen ? 'Closing Date' : 'Closing Date'}
         <svg

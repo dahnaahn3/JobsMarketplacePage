@@ -19,7 +19,7 @@ const handleCheckboxChange = (or) => {
 
   return (
     <>
-        <li onMouseEnter={handleOpen} onMouseLeave={handleLeave}>
+        <li onMouseEnter={handleOpen} onMouseLeave={handleLeave} className='relative'>
     <button
 
         id="dropdownDefault"
@@ -40,7 +40,7 @@ const handleCheckboxChange = (or) => {
       </button>
 
       {isOpen &&
-       <div className="flex absolute h-max w-max z-50 w-56 p-3 bg-white rounded-lg shadow" id="dropdown">
+       <div className="flex absolute h-max w-max z-50 w-56 p-3 ml-10 bg-white rounded-lg shadow" id="dropdown">
         <ul className="space-y-2 text-sm" aria-labelledby="dropdownDefault">
             <li className="flex items-center">
             <input

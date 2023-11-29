@@ -109,8 +109,8 @@ style={{width:"1216px"}}>
                     </div>
                     <div className="flex flex-row space-x-5">
                       <span>{bookmark}</span>
-                      <p className="flex box-border border-2 text-purple-600 border-purple-600 p-2 rounded-full"><UilCommentAlt className="mr-2" />{m.contact}</p>
-                      <button className="bg-purple-600 text-white rounded-full pl-3 pr-3">Apply</button>
+                      <p className="flex box-border border-2 text-purple-600 border-purple-600 p-2 rounded-full" style={{width: "92px"}}><UilCommentAlt className="mr-2" />{m.contact}</p>
+                      <button className="bg-purple-600 text-white rounded-full pl-3 pr-3" style={{width: "92px"}}>Apply</button>
                     </div>
                   </div>
                 </div>

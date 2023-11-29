@@ -105,8 +105,8 @@ console.log("is it open?", isOpen)
             <button><UilFilter className="border border-gray-200 h-[30px] w-[30px] p-1 rounded-full bg-gray-200"/></button>
             <button onClick={handleOpen}> <UilEllipsisV className="border border-gray-200 h-[30px] w-[30px] p-1 rounded-full bg-gray-200"/></button>
             {isOpen &&
-                <div className='rounded-md absolute bg-purple-300 mt-10 text-center'>
-                  <ul>
+                <div className='rounded-md absolute  bg-purple-300 mt-10 text-center'>
+                  <ul className='flex flex-col'>
                     <button className=''>Settings</button>
                     <button>Help</button>
                   </ul>

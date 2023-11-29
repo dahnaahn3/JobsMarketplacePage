@@ -25,7 +25,7 @@ return(
 <div key={p.id} className="flex flex-col static pb-3" style={{width:"400px"}}>
     <div className="justify-center items-center">
         <div className="flex flex-col items-center mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500">
-            <div style ={{background: "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(220,184,260,1) 56%)"}} className="relative flex h-32 w-full justify-center rounded-xl" >
+            <div style ={{background: "linear-gradient(0deg, rgba(74,61,84,1) 20%, rgba(220,183,255) 50%)"}} className="relative flex h-32 w-full justify-center rounded-xl" >
                 <div className="absolute -bottom-12 flex h-[100px] w-[100px] items-center justify-center rounded-full border-[4px] bg-white border-black">
                     <img className="h-full w-full rounded-full" src={p.photo} alt="" />
                 {online}
@@ -44,13 +44,16 @@ return(
               SVGstyle={{'display': 'inline'}} />
             </div>
 
-    <div className="bg-purple-200 m-6 p-3 w-full">
-        <div className="text-base font-normal text-gray-600 mb-3">Profile Completeness</div>
-        <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-        <div className="bg-gray-600 h-2.5 rounded-full dark:bg-gray-300" style={{width: "45%"}}></div>
-        <p className="text-right">45%</p>
-        </div>
-    </div>
+            <div className="m-6 p-3 w-full" style={{backgroundColor: "#dcd7fe"}}>
+                <div className="text-base font-normal text-gray-600 mb-3">Profile Completeness</div>
+                <div className="flex items-center">
+                    <div className="w-full bg-gray-200 rounded-full h-2.5 mr-2 dark:bg-gray-700">
+                        <div className="h-2.5 rounded-full" style={{ width: "45%", backgroundColor: "#7367f0"}}></div>
+                    </div>
+                    <p className="text-right">45%</p>
+                </div>
+            </div>
+
         </div>
     </div>
 

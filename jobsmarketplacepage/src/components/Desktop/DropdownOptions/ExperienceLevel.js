@@ -21,7 +21,7 @@ export const ExperienceLevel = ({ experienceLevel, onExperienceLevel }) => {
   };
 
   return (
-    <li onMouseEnter={handleOpen} onMouseLeave={handleLeave}>
+    <li onMouseEnter={handleOpen} onMouseLeave={handleLeave} className="relative" >
       <button
         id="dropdownDefault"
         data-dropdown-toggle="dropdown"
@@ -43,7 +43,7 @@ export const ExperienceLevel = ({ experienceLevel, onExperienceLevel }) => {
       </button>
 
       {isOpen && (
-        <div className="absolute h-max w-max z-50 w-56 p-3 bg-white rounded-lg shadow" id="dropdown">
+        <div className="absolute h-max w-max z-50 w-56 p-3 bg-white ml-10 rounded-lg shadow" id="dropdown">
           <ul className="space-y-2 text-sm" aria-labelledby="dropdownDefault">
           <li className="flex items-center">
               <input

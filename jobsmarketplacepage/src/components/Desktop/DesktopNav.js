@@ -1,11 +1,11 @@
 import DesktopSearchBar from './DesktopSearchBar';
-import { UilBriefcaseAlt, UilUsersAlt, UilHome} from '@iconscout/react-unicons'
 import { useState } from 'react';
 import logo from '../epostinglogo.png'
 import Home from '../home.png'
 import Suitcase from '../suitcase.png'
 import Resources from '../resources.png'
-
+import { FaGears } from "react-icons/fa6";
+import { BsExclamationCircle } from "react-icons/bs";
 
 function DesktopNav( { onSearch , searchTerm, ProfileData } ){
 
@@ -139,8 +139,9 @@ searchTerm={searchTerm}
               {isOpen &&
                 <div className='absolute z-10 right-0 mt-2 p-2 rounded-lg bg-white'>
                   <ul>
-                    <button>Settings</button>
-                    <button>Help</button>
+
+                    <button className='flex'> <FaGears style={{ marginRight: '8px' }} />Settings</button>
+                    <button className='flex'><BsExclamationCircle  style={{ marginRight: '8px' }}  />Help</button>
                   </ul>
                 </div>
                 }
